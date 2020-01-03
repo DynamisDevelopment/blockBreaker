@@ -1,3 +1,6 @@
+import Interface from '../interface/interface'
+import { c } from '../canvas'
+
 class Block {
     constructor(x, y, width, height, color, offsetX, offsetY, spacing) {
         this.x = x
@@ -29,6 +32,8 @@ Block.prototype.update = function (ball) {
 
     this.draw()
 }
+
+export default Block
 
 
 

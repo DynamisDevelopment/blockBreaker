@@ -20,3 +20,10 @@ const colors = [
     '#492378'
 ]
 
+export {
+    canvas,
+    c,
+    randomColor,
+    randomNum,
+    colors
+}

@@ -1,3 +1,7 @@
+import Interface from '../interface/interface'
+import { init } from '../../index'
+import { canvas, c, randomNum } from '../canvas'
+
 class Ball {
     constructor(radius, velocity, x, y, paddleWidth) {
         this.radius = radius
@@ -56,3 +60,5 @@ Ball.prototype.update = function (paddle) {
 
     this.draw()
 }
+
+export default Ball

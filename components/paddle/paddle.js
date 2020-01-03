@@ -1,3 +1,6 @@
+import Interface from '../interface/interface'
+import { canvas, c } from '../canvas'
+
 class Paddle {
     constructor(width, height) {
         this.width = width
@@ -19,3 +22,5 @@ Paddle.prototype.update = function () {
     Interface.mouseMatch(this)
     this.draw()
 }
+
+export default Paddle

@@ -1,8 +1,11 @@
 {
   "dependencies": {
-    "jest": "^24.9.0"
+    "components": "^0.1.0",
+    "jest": "^24.9.0",
+    "parcel-bundler": "^1.12.4"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest --watch",
+    "start": "parcel watch index.html"
   }
 }

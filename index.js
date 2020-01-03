@@ -1,8 +1,13 @@
+import { canvas, c, randomColor, randomNum, colors } from './components/canvas'
+import Interface from '/components/interface/interface'
+import Paddle from './components/paddle/paddle'
+import Ball from './components/ball/ball'
+import Block from './components/blocks/blocks'
+
+
 let newBall
 let newPaddle
 
-let blockX = 0
-let blockY = 0
 let blocks = []
 
 const score = document.querySelector('.score')
@@ -23,7 +28,7 @@ const init = () => {
     newBall = new Ball(30, 0, newPaddle.x, canvas.height - (paddleHeight * 2.5), paddleWidth)
 
     // * Generate Blocks
-    for (let i = 0; i < 150; i++) {
+    for (let i = 0; i < 105; i++) {
         const width = 100
         const height = 30
         const color = randomColor(colors)
@@ -78,3 +83,7 @@ const animate = () => {
 
 init()
 animate()
+
+export {
+    init
+}

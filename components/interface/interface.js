@@ -1,3 +1,5 @@
+import { canvas, c } from '../canvas'
+
 const Interface = {
     score: 0,
     lives: 3,
@@ -14,3 +16,5 @@ const Interface = {
         else return false
     }
 }
+
+export default Interface
