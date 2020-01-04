@@ -1,5 +1,5 @@
-import { canvas, c, randomColor, randomNum, colors } from './components/canvas'
-import Interface from '/components/interface/interface'
+import { canvas, c, randomColor, colors, lives, score } from './components/canvas'
+import Interface from './components/interface/interface'
 import Paddle from './components/paddle/paddle'
 import Ball from './components/ball/ball'
 import Block from './components/blocks/blocks'
@@ -9,9 +9,6 @@ let newBall
 let newPaddle
 
 let blocks = []
-
-const score = document.querySelector('.score')
-const lives = document.querySelector('.lives')
 
 const init = () => {
     // * Clear the state per round

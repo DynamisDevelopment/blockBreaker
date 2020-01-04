@@ -13,7 +13,7 @@ class Ball {
     }
 }
 
-Ball.prototype.draw = function () {
+    Ball.prototype.draw = function () {
     c.beginPath()
     c.fillStyle = this.color
     c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false)
@@ -21,23 +21,23 @@ Ball.prototype.draw = function () {
     c.closePath()
 }
 
-Ball.prototype.update = function (paddle) {
+    Ball.prototype.update = function (paddle) {
     // * Reverse if hits the ceiling
-    if (this.y - this.radius < 0) this.dy = -this.dy
+    if (this.y - this.radius<0) this.dy = -this.dy
 
-    // * If hits the ground, loose the game.
-    else if (this.y + this.radius > canvas.height) {
-        Interface.lives--
+// * If hits the ground, loose the game.
+else if (this.y + this.radius> canvas.height) {
+    Interface.lives--
 
-        if (Interface.lives === 0) alert('Sorry, you loose!')
-        else alert('Better luck next round!')
+    if (Interface.lives === 0) alert('Sorry, you loose!')
+else alert('Better luck next round!')
 
-        init()
-    }
+    init()
+}
     this.y -= this.dy
 
     //* Reverse if hits a side wall 
-    if (this.x + this.radius > canvas.width || this.x - this.radius < 0) this.dx = -this.dx
+    if (this.x + this.radius> canvas.width || this.x - this.radius<0) this.dx = -this.dx
     this.x += this.dx
 
     // * If stationary, at start of game, place in center of paddle
@@ -45,18 +45,18 @@ Ball.prototype.update = function (paddle) {
 
     // * Launch ball at start of game
     canvas.addEventListener('click', () => {
-        if (Interface.start) {
-            this.dx = randomNum(-15, 15)
-            this.dy = randomNum(-10, -15)
-            Interface.start = false
-        }
-    })
+    if (Interface.start) {
+    this.dx = randomNum(-15, 15)
+    this.dy = randomNum(-10, -15)
+    Interface.start = false
+}
+})
 
     // * If hits the paddle
     if (Interface.start === false && Interface.insideBox(this, paddle)) {
-        this.dy = -this.dy + 1
-        this.dx = this.dx + randomNum(-2, 2)
-    }
+    this.dy = -this.dy + 1
+    this.dx = this.dx + randomNum(-2, 2)
+}
 
     this.draw()
 }

@@ -1,5 +1,17 @@
-const canvas = document.getElementById("myCanvas")
-const c = canvas.getContext("2d")
+let canvas, c, lives, score
+
+if (process.env.TESTCANVAS) {
+    const { createCanvas } = require('canvas')
+    canvas = createCanvas(200, 200)
+    c = canvas.getContext('2d')
+    lives = document.createElement('div')
+    score = document.createElement('div')
+} else {
+    canvas = document.querySelector('#myCanvas')
+    c = canvas.getContext('2d')
+    score = document.querySelector('.score')
+    lives = document.querySelector('.lives')
+}
 
 canvas.width = innerWidth
 canvas.height = innerHeight
@@ -25,5 +37,7 @@ export {
     c,
     randomColor,
     randomNum,
-    colors
+    colors,
+    lives,
+    score
 }

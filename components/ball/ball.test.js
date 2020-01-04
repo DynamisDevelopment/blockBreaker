@@ -1,7 +1,3 @@
-import './ball.js'
+// import Ball from './ball'
 
-describe('Ball should be Created', () => {
-    it('Should exist', async () => {
-        expect(true).toBe(true)
-    })
-})  
+
